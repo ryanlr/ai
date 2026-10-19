@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI 做我的视频制作搭档 · 老王看AI</title>
+<meta name="description" content="从真人口播到长短视频：老王与 AI 协作做自媒体的六步实践。">
+<meta property="og:title" content="AI 做我的视频制作搭档 · 老王看AI">
+<meta property="og:description" content="怎样使用AI · AI时代最重要的竞争力 · AI时代什么东西不变">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: same system as heylaowang.com/stock_trading — top bar with brand + cross-site link, hero title, three numbered topics (the order is the owner's), footer.
+   Topic 1 contains a practical video case; topic 2 reflects on original thinking; topic 3 lists three chapter ideas from Morgan Housel's "Same as Ever". Light only. */
+:root{
+  --paper:#F5F7FA; --sheet:#FFFFFF; --ink:#0F2240; --text:#1C2B3D; --muted:#5B6875; --rule:#D9E0E7; --grid:#EBEFF4;
+  --blue:#1B86B8; --amber:#D9840F; --link:#1E3A5F; --teal:#0F7C76;
+  --display:"Noto Serif SC","Songti SC",serif; --body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.65}
+a{color:var(--link)}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+.bar{border-bottom:1px solid var(--rule);background:var(--sheet)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:14px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand .logo{width:34px;height:34px;flex:none;transition:transform .2s}
+.brand:hover .logo{transform:rotate(-6deg) scale(1.06)}
+.wordmark{font-family:"Baloo 2",var(--body);font-weight:800;font-size:24px;line-height:1;letter-spacing:-.01em;color:var(--ink)}
+.wordmark .hey{color:var(--amber)}
+.wordmark .tld{color:var(--blue);font-weight:600}
+.bar nav{display:flex;gap:18px;font-size:14px}
+.bar nav a{color:var(--muted);text-decoration:none}.bar nav a:hover{color:var(--ink)}
+
+.hero{padding-block:56px 36px;display:flex;flex-direction:column;gap:16px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--blue);text-transform:uppercase}
+h1{font-family:"ZCOOL QingKe HuangYou",var(--display);font-weight:400;color:var(--ink);font-size:clamp(52px,8vw,88px);line-height:1.05;letter-spacing:.04em;margin:0}
+.topics-nav{display:flex;flex-wrap:wrap;gap:8px}
+.topics-nav a{font-size:14px;text-decoration:none;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:999px;padding:4px 14px}
+.topics-nav a:hover{border-color:var(--ink)}
+
+main{display:flex;flex-direction:column;gap:44px;padding-block:8px 64px}
+.topic{display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}
+.tophead{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.num{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--amber)}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,28px);color:var(--ink);margin:0;text-wrap:balance}
+.soon{background:var(--sheet);border:1px dashed var(--rule);padding:16px 18px;color:var(--muted);font-size:14px;display:flex;align-items:center;gap:10px}
+.soon::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);flex:none}
+.src{font-size:13.5px;color:var(--muted);margin:0}
+.src i{font-style:normal;color:var(--text)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;gap:8px;background:var(--sheet);border:1px solid var(--rule);border-top:3px solid var(--c);padding:16px 18px;min-width:0}
+.card .en{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted)}
+.card h3{font-family:var(--display);font-weight:600;font-size:20px;line-height:1.3;color:var(--ink);margin:0}
+.card p{margin:0;font-size:14px}
+
+footer{border-top:1px solid var(--rule);background:var(--sheet)}
+footer .wrap{padding-block:20px 28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;font-size:12.5px;color:var(--muted)}
+@media (max-width:560px){.bar nav{gap:12px;font-size:13px}.wordmark{font-size:20px}.brand .logo{width:28px;height:28px}.hero{padding-block:36px 24px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* First practical case: editorial feature, responsive workflow. */
+.case{background:var(--sheet);border:1px solid var(--rule);border-radius:20px;overflow:hidden}
+.case-intro{padding:clamp(24px,5vw,52px);background:linear-gradient(125deg,#edf6fc,#f5faf8);position:relative}
+.case-label{color:var(--teal);font:600 12px var(--mono);letter-spacing:.1em}
+.case h3{font:600 clamp(28px,4vw,44px)/1.3 var(--display);color:var(--ink);margin:16px 0}
+.case-lead{font-size:clamp(18px,2.4vw,23px);max-width:800px;margin:0 0 20px;line-height:1.7}
+.case-context{color:var(--muted);max-width:800px;font-size:14px;margin:0}
+.case-content{padding:clamp(22px,4vw,40px)}
+.case h4{font-size:21px;color:var(--ink);margin:0 0 18px}
+.case h5{font-size:17px;margin:0 0 7px;color:var(--ink)}
+.case p{overflow-wrap:anywhere}
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
+.route{padding:22px;background:#f7f9fc;border-left:3px solid var(--blue);border-radius:0 12px 12px 0}
+.route:last-child{border-color:var(--teal)}
+.route p{margin:0;color:var(--muted);font-size:14px}
+.steps{list-style:none;padding:0;margin:0 0 36px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px 28px;counter-reset:step}
+.steps li{counter-increment:step;border-top:1px solid var(--rule);padding-top:18px}
+.steps li::before{content:'0' counter(step);display:block;color:var(--blue);font:600 13px var(--mono);margin-bottom:12px}
+.steps p{font-size:14px;color:var(--muted);margin:0;line-height:1.8}
+.results{background:#eff7f5;border-radius:14px;padding:24px;margin-bottom:26px}
+.result-links{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.result-link{display:block;padding:18px;background:#fff;border:1px solid #cfe2dd;border-radius:10px;text-decoration:none;transition:transform .2s,border-color .2s}
+.result-link:hover{transform:translateY(-3px);border-color:var(--teal)}
+.result-link span{display:block;font:600 12px var(--mono);color:var(--teal);margin-bottom:8px}
+.result-link strong{display:block;font-size:17px}.result-link small{display:block;color:var(--muted);margin-top:10px}
+.case-note{font-size:13px;color:var(--muted);margin:14px 0 0}
+.takeaway{border-left:3px solid var(--amber);padding:4px 0 4px 20px;margin:28px 0;font-size:19px;color:var(--ink)}
+.case details{border-top:1px solid var(--rule);padding:18px 0 0}
+.case summary{cursor:pointer;font-weight:700;color:var(--link)}
+.prompt{background:#f5f7fa;border-radius:10px;padding:20px;font-size:14px;line-height:1.9;white-space:pre-wrap}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
+@media(max-width:760px){.steps{grid-template-columns:1fr 1fr}.routes,.result-links{grid-template-columns:1fr}}
+@media(max-width:450px){.steps{grid-template-columns:1fr;gap:20px}.case-intro{padding:24px}.case-content{padding:22px}.case h3{font-size:30px}.result-link strong{font-size:16px}}
+
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&text=%E8%80%81%E7%8E%8B%E7%9C%8BAI&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&text=heylaowang.com&display=swap">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="https://heylaowang.com/" aria-label="heylaowang.com 首页">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" style="fill:var(--ink)"/><path d="M5 23 L10 19 L13 21 L18 13 L21 15" style="fill:none;stroke:#3FB4E6;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round"/><path d="M21 15 L24 12 L27 8" style="fill:none;stroke:var(--amber);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:2.5 2.5"/><circle cx="21" cy="15" r="2.2" style="fill:#fff"/></svg>
+      <span class="wordmark"><span class="hey">hey</span>laowang<span class="tld">.com</span></span>
+    </a>
+    <nav aria-label="站点"><a href="https://heylaowang.com/stock_trading/">老王看美股</a></nav>
+  </div>
+</header>
+<main class="wrap" style="padding-top:32px"><nav aria-label="返回"><a href="./#use">← 返回老王看AI · 怎样使用AI</a></nav>
+    <article class="case" id="ai-video">
+      <div class="case-intro">
+        <div class="case-label">CASE 01 · 自媒体实战 · 2026.10</div>
+        <h1 style="font-family:var(--display);font-size:clamp(30px,4vw,44px);font-weight:600;line-height:1.3;letter-spacing:0;margin:16px 0">AI 做我的视频制作搭档</h1>
+        <p class="case-lead">我负责观点和表达，AI 把素材变成作品。<br>从一段真人口播，到有数据、有图表的长视频，再到一条精华短视频。</p>
+        <p class="case-context">这个星期，尤其是这个周末，我升级了每月约100美元的订阅方案，并授权 AI 操作电脑，与它一起做了几轮财经视频。最有价值的体验，是用自然语言提出要求，让它实际完成查资料、剪辑、配图和上传，再根据我的反馈继续改。这里记录的是我的个人实践，费用不代表完成这套流程的统一门槛。</p>
+      </div>
+      <div class="case-content">
+        <h4>两种起点，同一个制作搭档</h4>
+        <div class="routes">
+          <section class="route"><h5>我已经录好了视频</h5><p>把真人口播交给 AI，保留我的声音和观点。它剪掉多余停顿，补上真实行情、新闻画面、字幕与音乐，让观众更容易听懂。</p></section>
+          <section class="route"><h5>我只有文章或一个选题</h5><p>提供文章，或让 AI 到指定讨论区寻找有价值的观点。把观点作为分析起点，核实数据、比较不同理由，再写脚本、生成配音和视频。</p></section>
+        </div>
+        <h4>一条视频，怎样一步步做出来？</h4>
+        <ol class="steps">
+          <li><h5>给素材，也给目标</h5><p>我录下自己的判断，说明想讲什么、给谁看。也可以提供文章或指定话题。观点和表达的方向，由我决定。</p></li>
+          <li><h5>先让表达流畅</h5><p>AI 删除“嗯、呃”和过长静音，保留自然呼吸。这次还调到1.1倍速，适度提亮画面，让气色更自然。</p></li>
+          <li><h5>让观点有据可看</h5><p>核实当前价格和历史走势，补充新闻背景。讲到某个价钱或日期，图上就用箭头指到对应位置；预测另标为情景示意。</p></li>
+          <li><h5>把内容变成画面</h5><p>讲行情时，真实日K线占主画面，我在右下角继续讲；新闻段落切换相关画面。加上清晰字幕、重点大字和不盖住人声的音乐。</p></li>
+          <li><h5>一份内容，两种节奏</h5><p>完整版本保留推理，再挑最有吸引力的片段做竖屏短视频。短版重新组织开头、依据和结论，图表和字幕也重新排版。</p></li>
+          <li><h5>反馈、发布、记住标准</h5><p>我指出语速、配色、声音等问题，AI 持续修改。确认成片后，按授权上传平台、核对成功；把偏好保存为可复用的 skill，下次直接沿用。</p></li>
+        </ol>
+        <section class="results" aria-labelledby="results-title">
+          <h4 id="results-title">这次的成品，直接看效果</h4>
+          <div class="result-links">
+            <a class="result-link" href="https://x.com/heylaowang/status/2111997047067099157"><span>03:27 · 完整分析</span><strong>QQQ跌近7%：我为什么仍看多？</strong><small>真人讲解 + 日K线 + 新闻画面 · 在 X 观看 ↗</small></a>
+            <a class="result-link" href="https://x.com/heylaowang/status/2111996575342051711"><span>00:52 · 竖屏精华</span><strong>黑色星期一？我反而在看机会</strong><small>重点片段 + 竖屏排版 + 音乐 · 在 X 观看 ↗</small></a>
+          </div>
+          <p class="case-note">这两条成片已发布到小红书与 X。视频中的行情有明确日期，市场判断只是当时观点；这里展示的是制作过程，不是投资建议。</p>
+        </section>
+        <p class="takeaway">我学到的用法：把一个真实任务交给 AI，一边做、一边反馈，最后把好用的方法留下来。</p>
+        <p>人的时间更多用在选题、判断和表达上。AI 承担资料整理和制作中的大量操作，但事实是否准确、观点是否成立、成片是否满意，仍需要我检查。一次合作得到作品，多次合作形成自己的制作流程。</p>
+        <details><summary>想试一次？从这段指令开始</summary><div class="prompt">这是我的真人口播视频，请保留我的声音和原意，剪掉填充音与过长停顿，适度改善亮度。
+讲到数据时补上已核实的图表，用同步箭头标出对应价格和日期；预测明确标为假设。加上清晰字幕、首帧标题和低音量配乐。
+先完成完整版本，再把最有意思的部分剪成一条竖屏短视频。交付成片和文案，等我确认后再上传。</div></details>
+      </div>
+    </article>
+<nav aria-label="案例导航"><a href="./#use">← 返回全部应用案例</a></nav></main>
+<footer>
+  <div class="wrap">
+    <span>老王看AI · 持续更新中</span>
+    <span><b style="color:var(--ink)">heylaowang.com</b> · <a href="https://heylaowang.com/stock_trading/">老王看美股</a></span>
+  </div>
+</footer>
+</body>
+</html>
