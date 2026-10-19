@@ -95,6 +95,23 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offs
 @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}.routes,.result-links{grid-template-columns:1fr}}
 @media(max-width:450px){.steps{grid-template-columns:1fr;gap:20px}.case-intro{padding:24px}.case-content{padding:22px}.case h3{font-size:30px}.result-link strong{font-size:16px}}
 
+
+/* Compact editorial directory; full original summaries remain in native disclosures. */
+.hero{padding-block:48px 30px;gap:18px}.hero h1{font-size:clamp(52px,7vw,80px)}
+.hero-line{margin:0;font-size:clamp(19px,2.4vw,27px);color:var(--ink);letter-spacing:.02em}.hero-line span{color:var(--muted)}
+.topics-nav{margin-top:4px}.topics-nav a{padding:7px 14px;background:transparent;font-size:12px}
+main{gap:40px;padding-top:12px}.tophead{flex-wrap:wrap;align-items:center;gap:10px 18px;padding:0;border:0}.num{font-size:11px;letter-spacing:.04em}.tophead h2{font-family:var(--body);font-size:clamp(18px,2vw,22px);font-weight:700}.section-hint{margin-left:auto;font-size:12px;color:var(--muted)}
+.portal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.portal{border:1px solid #d8e4e8;border-radius:18px;overflow:hidden;background:#edf6f4;transition:transform .2s,box-shadow .2s}.portal.p1{background:#edf4fb}.portal.p2{background:#faf3e8}
+.portal:hover{transform:translateY(-4px);box-shadow:0 12px 28px #0f22400d}.portal-link{display:block;padding:22px 24px 18px;text-decoration:none;color:var(--ink)}.portal-top{display:flex;align-items:center;justify-content:space-between;font:600 11px var(--mono);letter-spacing:.08em;color:var(--muted)}.go{font-size:23px;font-family:var(--body)}.portal svg{display:block;width:92px;height:71px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin:12px 0}.p1 svg{stroke:var(--blue)}.p2 svg{stroke:var(--amber)}
+.eyebrow{font-size:11px;letter-spacing:.07em;color:var(--muted)}.portal h3{font-family:var(--display);font-size:25px;line-height:1.45;margin:8px 0}.hook{font-size:14px;margin:0;color:var(--muted)}
+.portal details,.human details{background:#ffffff69}.portal summary,.human summary{padding:12px 24px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;cursor:pointer;list-style:none}.portal summary::-webkit-details-marker,.human summary::-webkit-details-marker,.thought summary::-webkit-details-marker{display:none}
+.reveal{padding:0 24px 20px;font-size:13px;line-height:1.85}.reveal p{margin-top:0}.reveal a{font-size:12px}details[open] summary span:last-child{transform:rotate(45deg)}
+.human{background:#fff;border:1px solid var(--rule);border-radius:18px;overflow:hidden}.human-link{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 32px;text-decoration:none;color:var(--ink)}.human h3{font-family:var(--display);font-size:clamp(25px,3vw,34px);line-height:1.5;margin:8px 0 12px}.human-cta{font-size:12px;color:var(--teal)}.human-words{display:flex;gap:10px;flex-shrink:0}.human-words span{display:flex;align-items:center;justify-content:center;width:78px;height:100px;border-radius:40px;background:#f1f5f9;font-family:var(--display);font-size:21px;writing-mode:vertical-rl;letter-spacing:.25em}.human-words span:nth-child(2){background:#e8f4f0;transform:translateY(-9px)}.human-words span:nth-child(3){background:#fbf1df;transform:translateY(7px)}
+.thoughts{background:#fff;border:1px solid var(--rule);border-radius:14px;overflow:hidden}.thought+.thought{border-top:1px solid #edf0f3}.thought summary{display:flex;align-items:center;gap:18px;padding:18px 24px;cursor:pointer;list-style:none;font-size:16px;color:var(--ink)}.thought-num{font:12px var(--mono);color:var(--amber)}.plus{margin-left:auto;color:var(--muted)}.thought-body{padding:0 24px 20px 62px;font-size:14px;max-width:850px}.thought-body p{margin-bottom:0}.thought summary:hover{background:#f8fafc}
+@media(max-width:760px){.human-words span{width:48px;height:86px;font-size:17px}.human-link{padding:24px}.portal-link{padding:18px}.portal h3{font-size:21px}.portal summary{padding:12px 18px}.section-hint{display:none}}
+@media(max-width:600px){.hero{padding-top:30px}.portal-grid{grid-template-columns:1fr}.portal-link{padding:18px 22px;display:grid;grid-template-columns:1fr 72px;gap:0 10px}.portal-top{grid-column:1/-1;margin-bottom:10px}.portal svg{grid-column:2;grid-row:2/5;width:72px;height:66px;margin:8px 0}.portal h3{font-size:23px;margin:5px 0}.portal h3 br{display:block}.portal .eyebrow,.portal .hook{grid-column:1}.portal summary{padding:10px 22px}.human-link{align-items:flex-start}.human-words{gap:5px}.human-words span{width:30px;height:73px;font-size:15px}.human h3{font-size:24px}.human-cta{display:block;max-width:220px}.thought summary{font-size:14px;padding:17px 18px;gap:12px}.thought-body{padding-left:44px}.hero-line span{display:block}.topics-nav a{padding:5px 10px;font-size:11px}}
+
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&text=%E8%80%81%E7%8E%8B%E7%9C%8BAI&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&text=heylaowang.com&display=swap">
@@ -111,67 +128,20 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offs
 </header>
 
 <section class="wrap hero">
-  <div class="kicker">heylaowang.com / ai</div>
-  <h1>老王看AI</h1>
-  <nav class="topics-nav" aria-label="本页内容"><a href="#use">怎样使用AI</a><a href="#edge">AI时代最重要的竞争力</a><a href="#same">AI时代什么不变</a></nav>
+<div class="kicker">老王的 AI 实践手记</div>
+<h1>老王看AI</h1>
+<p class="hero-line">把想法做出来，<span>把重要的留下来。</span></p>
+<nav class="topics-nav" aria-label="本页内容"><a href="#use">01 怎样使用AI</a><a href="#edge">02 人的竞争力</a><a href="#same">03 什么不变</a></nav>
 </section>
-
 <main class="wrap">
-  <section class="topic" id="use">
-    <div class="tophead"><span class="num">01</span><h2>怎样使用AI</h2></div>
-    <article class="card" id="ai-video" style="--c:var(--teal);border-radius:12px;padding:24px">
-      <span class="en">CASE 01 · 自媒体实战</span>
-      <h3><a href="video-production.html" style="text-decoration:none">AI 做我的视频制作搭档</a></h3>
-      <p>我负责观点和表达，AI 帮我补数据、剪辑、配图，把一段真人口播做成完整分析和精华短视频。</p>
-      <p style="margin-top:8px"><a href="video-production.html" style="font-weight:700">查看完整案例：六步流程与真实成片 →</a></p>
-    </article>
-    <article class="card" id="ai-website" style="--c:var(--blue);border-radius:12px;padding:24px">
-      <span class="en">CASE 02 · 个人网站实战</span>
-      <h3><a href="website-editor.html" style="text-decoration:none">AI 做我的个人网站编辑</a></h3>
-      <p>从整理想法、设计网页到 GitHub 发布；点选页面元素，再用一句话提出精确修改。这个网站就是实例。</p>
-      <p style="margin-top:8px"><a href="website-editor.html" style="font-weight:700">查看完整案例：建站流程与点选修改示例 →</a></p>
-    </article>
-    <article class="card" id="ai-data" style="--c:var(--amber);border-radius:12px;padding:24px">
-      <span class="en">CASE 03 · 数据分析与可视化</span>
-      <h3><a href="data-analysis.html" style="text-decoration:none">AI 做我的数据分析助手</a></h3>
-      <p>我提出问题，AI 帮我整理数据、制作交互图表。以「老王看美股」为例，让公司更替、行情变化和事件比较一目了然。</p>
-      <p style="margin-top:8px"><a href="data-analysis.html" style="font-weight:700">查看完整案例：用可视化看清关键信息 →</a></p>
-    </article>
-  </section>
-
-  <section class="topic" id="edge">
-    <div class="tophead"><span class="num">02</span><h2>AI时代最重要的竞争力是什么</h2></div>
-    <article class="card" style="--c:var(--amber);border-radius:12px;padding:24px">
-      <span class="en">人的竞争力 · AI 的助力</span>
-      <h3><a href="human-advantage.html" style="text-decoration:none">工具变了，核心竞争力仍然在人</a></h3>
-      <p>以做视频为例：个人形象、表达能力和思想，决定观众为什么愿意看你。AI 帮助制作，而内容的价值来自你对这个领域和观众的理解。</p>
-      <p style="margin-top:8px"><a href="human-advantage.html" style="font-weight:700">查看完整思考：从投资频道到旅游视频 →</a></p>
-    </article>
-  </section>
-
-  <section class="topic" id="same">
-    <div class="tophead"><span class="num">03</span><h2>AI时代什么东西是不变的</h2></div>
-    <p class="src">借用 Morgan Housel《<i>Same as Ever</i>》里的三个章节标题。</p>
-    <div class="cards">
-      <article class="card" style="--c:var(--amber)">
-        <span class="en">Best Story Wins</span>
-        <h3>最好的故事胜出</h3>
-        <p>赢得注意力和资源的，往往不是最正确的想法，而是讲得最好的故事。工具再强，人还是被故事打动。</p>
-      </article>
-      <article class="card" style="--c:var(--blue)">
-        <span class="en">Too Much, Too Soon, Too Fast</span>
-        <h3>太多、太早、太快</h3>
-        <p>好东西被推得太猛，往往会伤到自己。每一轮技术热潮都容易过度乐观、急于求成，AI 也不例外。</p>
-      </article>
-      <article class="card" style="--c:var(--teal)">
-        <span class="en">Overnight Tragedies and Long-Term Miracles</span>
-        <h3>坏事一夜之间，奇迹需要很久</h3>
-        <p>坏消息来得突然、引人注目；真正的进步靠复利慢慢累积，当下往往看不出来。</p>
-      </article>
-    </div>
-  </section>
+<section class="topic" id="use"><div class="tophead"><span class="num">01 / 实践</span><h2>怎样使用AI</h2><span class="section-hint">三个真实案例，点开看看</span></div><div class="portal-grid"><article class="portal p0" id="ai-video"><a class="portal-link" href="video-production.html"><div class="portal-top"><span>CASE 01</span><span class="go" aria-hidden="true">↗</span></div><svg viewBox="0 0 114 88" aria-hidden="true"><rect x="12" y="16" width="62" height="44" rx="8"/><path d="m38 29 16 9-16 9z"/><rect x="78" y="32" width="24" height="43" rx="5"/></svg><span class="eyebrow">自媒体实战</span><h3>AI 做我的<br>视频制作搭档</h3><p class="hook">一段口播，两种作品。</p></a><details><summary>先看简介 <span aria-hidden="true">＋</span></summary><div class="reveal"><p>我负责观点和表达，AI 帮我补数据、剪辑、配图，把一段真人口播做成完整分析和精华短视频。</p><a href="video-production.html">查看完整案例：六步流程与真实成片 →</a></div></details></article>
+<article class="portal p1" id="ai-website"><a class="portal-link" href="website-editor.html"><div class="portal-top"><span>CASE 02</span><span class="go" aria-hidden="true">↗</span></div><svg viewBox="0 0 114 88" aria-hidden="true"><rect x="12" y="15" width="90" height="58" rx="8"/><path d="M12 30h90M22 23h2m6 0h2M26 43h40M26 53h24m20-12 22 13-12 3-4 12z"/></svg><span class="eyebrow">个人网站实战</span><h3>AI 做我的<br>个人网站编辑</h3><p class="hook">指到哪里，说改哪里。</p></a><details><summary>先看简介 <span aria-hidden="true">＋</span></summary><div class="reveal"><p>从整理想法、设计网页到 GitHub 发布；点选页面元素，再用一句话提出精确修改。这个网站就是实例。</p><a href="website-editor.html">查看完整案例：建站流程与点选修改示例 →</a></div></details></article>
+<article class="portal p2" id="ai-data"><a class="portal-link" href="data-analysis.html"><div class="portal-top"><span>CASE 03</span><span class="go" aria-hidden="true">↗</span></div><svg viewBox="0 0 114 88" aria-hidden="true"><path d="M16 14v59h88M29 61V46h12v15m13 0V32h12v29m13 0V20h12v41M25 36l27-16 22 4 22-15"/></svg><span class="eyebrow">数据分析与可视化</span><h3>AI 做我的<br>数据分析助手</h3><p class="hook">让数字，自己讲故事。</p></a><details><summary>先看简介 <span aria-hidden="true">＋</span></summary><div class="reveal"><p>我提出问题，AI 帮我整理数据、制作交互图表。以「老王看美股」为例，让公司更替、行情变化和事件比较一目了然。</p><a href="data-analysis.html">查看完整案例：用可视化看清关键信息 →</a></div></details></article></div></section>
+<section class="topic" id="edge"><div class="tophead"><span class="num">02 / 思考</span><h2>AI时代最重要的竞争力是什么</h2></div>
+<article class="human"><a href="human-advantage.html" class="human-link"><div><span class="eyebrow">人的竞争力 · AI 的助力</span><h3>工具变了，<br>核心竞争力仍然在人。</h3><span class="human-cta">从投资频道到旅游视频，读完整思考 ↗</span></div><div class="human-words" aria-label="形象、表达、思想"><span>形象</span><span>表达</span><span>思想</span></div></a>
+<details><summary>先看简介 <span aria-hidden="true">＋</span></summary><div class="reveal"><p>以做视频为例：个人形象、表达能力和思想，决定观众为什么愿意看你。AI 帮助制作，而内容的价值来自你对这个领域和观众的理解。</p><a href="human-advantage.html">查看完整思考：从投资频道到旅游视频 →</a></div></details></article></section>
+<section class="topic" id="same"><div class="tophead"><span class="num">03 / 恒常</span><h2>AI时代什么东西是不变的</h2></div><p class="src">借用 Morgan Housel《<i>Same as Ever</i>》里的三个章节标题。</p><div class="thoughts"><details class="thought"><summary><span class="thought-num">01</span><span>最好的故事胜出</span><span class="plus" aria-hidden="true">＋</span></summary><div class="thought-body"><span class="eyebrow">Best Story Wins</span><p>赢得注意力和资源的，往往不是最正确的想法，而是讲得最好的故事。工具再强，人还是被故事打动。</p></div></details><details class="thought"><summary><span class="thought-num">02</span><span>太多、太早、太快</span><span class="plus" aria-hidden="true">＋</span></summary><div class="thought-body"><span class="eyebrow">Too Much, Too Soon, Too Fast</span><p>好东西被推得太猛，往往会伤到自己。每一轮技术热潮都容易过度乐观、急于求成，AI 也不例外。</p></div></details><details class="thought"><summary><span class="thought-num">03</span><span>坏事一夜之间，奇迹需要很久</span><span class="plus" aria-hidden="true">＋</span></summary><div class="thought-body"><span class="eyebrow">Overnight Tragedies and Long-Term Miracles</span><p>坏消息来得突然、引人注目；真正的进步靠复利慢慢累积，当下往往看不出来。</p></div></details></div></section>
 </main>
-
 <footer>
   <div class="wrap">
     <span>老王看AI · 持续更新中</span>
